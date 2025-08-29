@@ -1,0 +1,88 @@
+﻿@page
+@model PrototypeRazorAuth.Pages.CompetenciesPage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/ProfilePage/Index">Profile</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/DashboardPage/Index">Dashboard</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/GoalsPage/Index">Goals</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/NetworkingPage/Index">Networking</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" asp-page="/CompetenciesPage/Index">Competencies</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/CDLPage/Index">CDL</a>
+    </li>
+</ul>
+
+<br />
+
+<div class="input-container">
+    <h3>Date Range</h3>
+    <label for="fromInput">From:</label>
+    <input class="input" type="month" id="fromInput" name="bdaymonth">
+
+    <label for="toInput">To:</label>
+    <input class="input" type="month" id="toInput" name="bdaymonth">
+</div>
+
+<br />
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+
+            </th>
+            <th>
+                Knowledge and Skill Base Competencies
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Competencies[0].Level)
+            </th>
+            <th>
+                Evidence
+            </th>
+            <th>
+                Reflections
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Competencies)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Competency)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Description)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Level)
+                </td>
+                <td>
+                    <a href="@Html.DisplayFor(modelItem => item.EvidenceLink)">Evidence1.pdf</a>
+                </td>
+                <td>
+                    <a href="@Html.DisplayFor(modelItem => item.ReflectionLink)">Year1Semester1Reflection</a>
+                </td>
+                <td>
+                    <a asp-page="Edit">Edit</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

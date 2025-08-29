@@ -1,0 +1,65 @@
+﻿@page
+@model PrototypeRazorAuth.Pages.SummaryPage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Summary</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Summary.Id" />
+            <div class="form-group">
+                <label asp-for="Summary.Name" class="control-label"></label>
+                <input asp-for="Summary.Name" class="form-control" />
+                <span asp-validation-for="Summary.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Summary.Title" class="control-label"></label>
+                <input asp-for="Summary.Title" class="form-control" />
+                <span asp-validation-for="Summary.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Summary.ProfileImage" class="control-label"></label>
+                <input asp-for="Summary.ProfileImage" class="form-control" />
+                <span asp-validation-for="Summary.ProfileImage" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Summary.GoalsCompleted" class="control-label"></label>
+                <input asp-for="Summary.GoalsCompleted" class="form-control" />
+                <span asp-validation-for="Summary.GoalsCompleted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Summary.NumConfidentCompentencies" class="control-label"></label>
+                <input asp-for="Summary.NumConfidentCompentencies" class="form-control" />
+                <span asp-validation-for="Summary.NumConfidentCompentencies" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Summary.NumEmergingCompentencies" class="control-label"></label>
+                <input asp-for="Summary.NumEmergingCompentencies" class="form-control" />
+                <span asp-validation-for="Summary.NumEmergingCompentencies" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Summary.LogbookCompleted" class="control-label"></label>
+                <input asp-for="Summary.LogbookCompleted" class="form-control" />
+                <span asp-validation-for="Summary.LogbookCompleted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

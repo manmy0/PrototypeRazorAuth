@@ -9,12 +9,3 @@
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
 
-@if (Model.CDL != null)
-{
-    <ul>
-        @foreach (var entity in Model.CDL)
-        {
-            <li>@entity.Description</li> 
-        }
-    </ul>
-}

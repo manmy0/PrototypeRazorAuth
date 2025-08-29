@@ -1,0 +1,70 @@
+﻿@page
+@model PrototypeRazorAuth.Pages.NetworkingPage.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Networking</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Networking.Id" />
+            <div class="form-group">
+                <label asp-for="Networking.Name" class="control-label"></label>
+                <input asp-for="Networking.Name" class="form-control" />
+                <span asp-validation-for="Networking.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Networking.Company" class="control-label"></label>
+                <input asp-for="Networking.Company" class="form-control" />
+                <span asp-validation-for="Networking.Company" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Networking.ContactInfo" class="control-label"></label>
+                <input asp-for="Networking.ContactInfo" class="form-control" />
+                <span asp-validation-for="Networking.ContactInfo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Networking.ProgressNotes" class="control-label"></label>
+                <input asp-for="Networking.ProgressNotes" class="form-control" />
+                <span asp-validation-for="Networking.ProgressNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Networking.ElevatorPitch" class="control-label"></label>
+                <input asp-for="Networking.ElevatorPitch" class="form-control" />
+                <span asp-validation-for="Networking.ElevatorPitch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Networking.CompaniesContact" class="control-label"></label>
+                <input asp-for="Networking.CompaniesContact" class="form-control" />
+                <span asp-validation-for="Networking.CompaniesContact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Networking.Questions" class="control-label"></label>
+                <input asp-for="Networking.Questions" class="form-control" />
+                <span asp-validation-for="Networking.Questions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Networking.UpcomingEvents" class="control-label"></label>
+                <input asp-for="Networking.UpcomingEvents" class="form-control" />
+                <span asp-validation-for="Networking.UpcomingEvents" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="./Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

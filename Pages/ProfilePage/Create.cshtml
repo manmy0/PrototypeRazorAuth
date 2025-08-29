@@ -1,0 +1,84 @@
+﻿@page
+@model PrototypeRazorAuth.Pages.ProfilePage.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Profile</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Profile.Name" class="control-label"></label>
+                <input asp-for="Profile.Name" class="form-control" />
+                <span asp-validation-for="Profile.Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Title" class="control-label"></label>
+                <input asp-for="Profile.Title" class="form-control" />
+                <span asp-validation-for="Profile.Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Introduction" class="control-label"></label>
+                <input asp-for="Profile.Introduction" class="form-control" />
+                <span asp-validation-for="Profile.Introduction" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.LinkedIn" class="control-label"></label>
+                <input asp-for="Profile.LinkedIn" class="form-control" />
+                <span asp-validation-for="Profile.LinkedIn" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Resume" class="control-label"></label>
+                <input asp-for="Profile.Resume" class="form-control" />
+                <span asp-validation-for="Profile.Resume" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.SupportingDocuments" class="control-label"></label>
+                <input asp-for="Profile.SupportingDocuments" class="form-control" />
+                <span asp-validation-for="Profile.SupportingDocuments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.ProfessionalDocuments" class="control-label"></label>
+                <input asp-for="Profile.ProfessionalDocuments" class="form-control" />
+                <span asp-validation-for="Profile.ProfessionalDocuments" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Link1" class="control-label"></label>
+                <input asp-for="Profile.Link1" class="form-control" />
+                <span asp-validation-for="Profile.Link1" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Link2" class="control-label"></label>
+                <input asp-for="Profile.Link2" class="form-control" />
+                <span asp-validation-for="Profile.Link2" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Link3" class="control-label"></label>
+                <input asp-for="Profile.Link3" class="form-control" />
+                <span asp-validation-for="Profile.Link3" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Profile.Actions" class="control-label"></label>
+                <input asp-for="Profile.Actions" class="form-control" />
+                <span asp-validation-for="Profile.Actions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

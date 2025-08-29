@@ -1,0 +1,113 @@
+﻿@page
+@model PrototypeRazorAuth.Pages.GoalsPage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/ProfilePage/Index">Profile</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/DashboardPage/Index">Dashboard</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" asp-page="/GoalsPage/Index">Goals</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/NetworkingPage/Index">Networking</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/CompetenciesPage/Index">Competencies</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/CDLPage/Index">CDL</a>
+    </li>
+</ul>
+
+<br />
+
+<div class="input-container">
+    <h3>Date Range</h3>
+    <label for="fromInput">From:</label>
+    <input class="input" type="month" id="fromInput" name="from">
+
+    <label for="toInput">To:</label>
+    <input class="input" type="month" id="toInput" name="to">
+</div>
+
+<br />
+
+<div class="info-container">
+    <label for="prof" style="display: inline-block; margin-right: 10px; margin-bottom: 20px; vertical-align: middle;">Professional Interests:</label>
+    <textarea class="form-control" id="prof" rows="3" style="height: 20px; width: 1080px; margin-bottom: 20px; display: inline-block; vertical-align: middle;" readonly>@Model.Goals[0].ProfessionalInterests</textarea>
+
+    <label for="emp" style="display: inline-block; margin-right: 10px; margin-bottom: 20px; vertical-align: middle;">Employers of interest:</label>
+    <textarea class="form-control" id="emp" rows="3" style="height: 20px; width: 1080px; margin-bottom: 20px; display: inline-block; vertical-align: middle;" readonly>@Model.Goals[0].EmployersOfInterest</textarea>
+    <div class="info-container">
+        <label for="per" style="display: inline-block; margin-right: 50px; margin-bottom: 20px; vertical-align: middle;">Personal Values:</label>
+        <textarea class="form-control" id="per" rows="3" style="height: 20px; width: 1080px; margin-bottom: 20px; display: inline-block; vertical-align: middle;" readonly>@Model.Goals[0].PersonalValues</textarea>
+
+        <label for="dev" style="display: inline-block; margin-right: 10px; margin-bottom: 20px; vertical-align: middle;">Development Focus for This Year:</label>
+        <textarea class="form-control" id="dev" rows="3" style="height: 20px; width: 1000px; margin-bottom: 20px; display: inline-block; vertical-align: middle;" readonly>@Model.Goals[0].DevelopmentFocus</textarea>
+    </div>
+</div>
+
+<br />
+
+<button class="btn btn-light">New Goal</button>
+
+<br />
+<br />
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                SMART Goal
+            </th>
+            <th>
+                Action Steps
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Goals[0].Timeline)
+            </th>
+            <th>
+                Progress Notes
+            </th>
+            <th>
+                Key Learnings
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Goals)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.SmartGoal)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ActionSteps)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Timeline)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProgressNotes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.KeyLearnings)
+                </td>
+                <td>
+                    <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                    <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

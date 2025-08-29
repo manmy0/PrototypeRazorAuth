@@ -1,0 +1,76 @@
+﻿@page
+@model PrototypeRazorAuth.Pages.GoalsPage.DeleteModel
+
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Goals</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Goals.ProfessionalInterests)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Goals.ProfessionalInterests)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Goals.EmployersOfInterest)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Goals.EmployersOfInterest)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Goals.PersonalValues)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Goals.PersonalValues)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Goals.DevelopmentFocus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Goals.DevelopmentFocus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Goals.SmartGoal)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Goals.SmartGoal)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Goals.ActionSteps)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Goals.ActionSteps)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Goals.Timeline)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Goals.Timeline)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Goals.ProgressNotes)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Goals.ProgressNotes)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Goals.KeyLearnings)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Goals.KeyLearnings)
+        </dd>
+    </dl>
+    
+    <form method="post">
+        <input type="hidden" asp-for="Goals.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" /> |
+        <a asp-page="./Index">Back to List</a>
+    </form>
+</div>

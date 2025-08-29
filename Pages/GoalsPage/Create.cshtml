@@ -1,0 +1,74 @@
+﻿@page
+@model PrototypeRazorAuth.Pages.GoalsPage.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Goals</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Goals.ProfessionalInterests" class="control-label"></label>
+                <input asp-for="Goals.ProfessionalInterests" class="form-control" />
+                <span asp-validation-for="Goals.ProfessionalInterests" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Goals.EmployersOfInterest" class="control-label"></label>
+                <input asp-for="Goals.EmployersOfInterest" class="form-control" />
+                <span asp-validation-for="Goals.EmployersOfInterest" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Goals.PersonalValues" class="control-label"></label>
+                <input asp-for="Goals.PersonalValues" class="form-control" />
+                <span asp-validation-for="Goals.PersonalValues" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Goals.DevelopmentFocus" class="control-label"></label>
+                <input asp-for="Goals.DevelopmentFocus" class="form-control" />
+                <span asp-validation-for="Goals.DevelopmentFocus" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Goals.SmartGoal" class="control-label"></label>
+                <input asp-for="Goals.SmartGoal" class="form-control" />
+                <span asp-validation-for="Goals.SmartGoal" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Goals.ActionSteps" class="control-label"></label>
+                <input asp-for="Goals.ActionSteps" class="form-control" />
+                <span asp-validation-for="Goals.ActionSteps" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Goals.Timeline" class="control-label"></label>
+                <input asp-for="Goals.Timeline" class="form-control" />
+                <span asp-validation-for="Goals.Timeline" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Goals.ProgressNotes" class="control-label"></label>
+                <input asp-for="Goals.ProgressNotes" class="form-control" />
+                <span asp-validation-for="Goals.ProgressNotes" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Goals.KeyLearnings" class="control-label"></label>
+                <input asp-for="Goals.KeyLearnings" class="form-control" />
+                <span asp-validation-for="Goals.KeyLearnings" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-page="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

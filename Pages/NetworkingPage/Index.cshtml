@@ -1,0 +1,110 @@
+﻿@page
+@model PrototypeRazorAuth.Pages.NetworkingPage.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<ul class="nav nav-pills">
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/ProfilePage/Index">Profile</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/DashboardPage/Index">Dashboard</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/GoalsPage/Index">Goals</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link active" aria-current="page" asp-page="/NetworkingPage/Index">Networking</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/CompetenciesPage/Index">Competencies</a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link" asp-page="/CDLPage/Index">CDL</a>
+    </li>
+</ul>
+
+<br />
+<br />
+
+<div class="page-container">
+    <div class="column">
+        <div class="content-block">
+            <h4 class="box-title">Elevator Pitch</h4>
+            <div class="info-box">
+                <p>@Model.Networking[0].ElevatorPitch</p>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h4 class="box-title">Networking Ice Breakers and Questions to Ask</h4>
+            <div class="info-box">
+                <p>@Model.Networking[0].Questions</p>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="column">
+        <div class="content-block">
+            <h4 class="box-title">Companies and Contacts of Interest</h4>
+            <div class="info-box">
+                <p>@Model.Networking[0].CompaniesContact</p>
+            </div>
+        </div>
+
+        <div class="content-block">
+            <h4 class="box-title">Upcoming Events</h4>
+            <div class="info-box">
+                <p>@Model.Networking[0].UpcomingEvents</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<br />
+<hr />
+<br />
+
+<h3>Industry Contact Log</h3>
+<br />
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Networking[0].Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Networking[0].Company)
+            </th>
+            <th>
+                Contact Information
+            </th>
+            <th>
+                Progress Note
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.Networking)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Company)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ContactInfo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.ProgressNotes)
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

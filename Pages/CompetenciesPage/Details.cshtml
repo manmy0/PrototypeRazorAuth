@@ -1,0 +1,55 @@
+﻿@page
+@model PrototypeRazorAuth.Pages.CompetenciesPage.DetailsModel
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Competencies</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Competencies.Num)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Competencies.Num)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Competencies.Competency)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Competencies.Competency)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Competencies.Description)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Competencies.Description)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Competencies.Level)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Competencies.Level)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Competencies.EvidenceLink)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Competencies.EvidenceLink)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Competencies.ReflectionLink)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Competencies.ReflectionLink)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-page="./Edit" asp-route-id="@Model.Competencies.Id">Edit</a> |
+    <a asp-page="./Index">Back to List</a>
+</div>
